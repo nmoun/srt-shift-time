@@ -43,10 +43,6 @@ function offsetTime(time, offset){
   var duration = moment.duration(time.replace(',', '.'))
   // mutates moment
   timeMoment.add(duration)
-  if(offset > 0){
-    timeMoment.add(offset, 'ms')
-  }else{
-    timeMoment.subtract(offset, 'ms')
-  }
+  timeMoment.add(offset, 'ms')
   return timeMoment
 }
