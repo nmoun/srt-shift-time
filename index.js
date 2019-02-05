@@ -1,7 +1,6 @@
 const path = require('path')
 const fs = require('fs')
-const moment = require('moment')
-
+const moment = require('./moment')
 
 main(process.argv[2], parseInt(process.argv[3], 10))
 
