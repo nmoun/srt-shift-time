@@ -8,7 +8,7 @@ function main(filename, offset){
   console.log(`file: ${filename}`)
   console.log(`offset in ms: ${offset}`)
 
-  const reg = new RegExp(/^([0-9]{2}:[0-9]{2}:[0-9]{2},[0-9]{3}) --> ([0-9]{2}:[0-9]{2}:[0-9]{2},[0-9]{3})$/, 'g')
+  const reg = new RegExp(/^([0-9]{2}:[0-9]{2}:[0-9]{2},[0-9]{3}) --> ([0-9]{2}:[0-9]{2}:[0-9]{2},[0-9]{3})$/)
   const content = fs.readFileSync(path.resolve(__dirname, filename), 'utf8')
   const arr = content.split('\r\n')
 
