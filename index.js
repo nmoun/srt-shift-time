@@ -8,8 +8,11 @@ function main(filename, offset){
   console.log(`file: ${filename}`)
   console.log(`offset in ms: ${offset}`)
 
-  const reg = new RegExp(/^([0-9]{2}:[0-9]{2}:[0-9]{2},[0-9]{3}) --> ([0-9]{2}:[0-9]{2}:[0-9]{2},[0-9]{3})$/)
-  const content = fs.readFileSync(path.resolve(__dirname, filename), 'utf8')
+  const reg = new RegExp(/([0-9]{2}:[0-9]{2}:[0-9]{2},[0-9]{3}) --> ([0-9]{2}:[0-9]{2}:[0-9]{2},[0-9]{3})/)
+  let content = fs.readFileSync(path.resolve(__dirname, filename), 'utf8')
+  content = content
+    .replace(/(?<!\r)(\n)/g, '\r\n')
+    .replace(/^(\n)/g, '\r\n')
   const arr = content.split('\r\n')
 
   let result = arr.reduce((acc, el) => {
