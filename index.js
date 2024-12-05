@@ -25,7 +25,7 @@ function main(filename, offset){
         return acc + el + '\r\n'
       }
     }, '')
-  fs.writeFileSync(path.resolve(__dirname, 'results', filename.split('.srt')[0] + '_result.srt'), result)
+  fs.writeFileSync(path.resolve(__dirname, 'results', filename.split('.srt')[0] + '_' + offset + '.srt'), result)
 }
 
 /**
